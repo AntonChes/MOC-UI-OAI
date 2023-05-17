@@ -1,0 +1,639 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto:wght@400;500&display=swap');
+
+
+.black-wrp {
+    display: none;
+    height: 100vh;
+    width: 100vw;
+    z-index: 88;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+#wrapper {
+    display: flex;
+    justify-content: center;
+    transition: .5s;
+}
+#modelConfigSection {
+    display: none;
+    width: 406px;
+
+    padding: 16px 16px 0 16px;
+    margin-right: 16px;
+    border-right: 1px solid #CBCBCB;
+    position: relative;
+}
+
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    padding: 24px 0 24px 0;
+    border-bottom: 1px solid #CBCBCB;
+}
+#chatSection .head {
+    min-height: 32px;
+    position: relative;
+    justify-content: center;
+}
+h2 {
+    margin: 0;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #666666;
+}
+#chatSection .head h2 {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 16px;
+}
+.head h3 {
+    margin: 0px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 16px;
+
+    color: #F1563C;
+}
+.moc-logo {
+    width: 32px;
+    height: 32px; 
+}
+#chatSection .moc-logo {
+    position: absolute;
+    left: 0;
+}
+
+#wrapper_Form form {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+#modelConfigBTN {
+    margin: 10px;
+}
+.gear-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+
+    border: 1px solid #fff;
+    background: #fff;
+}
+.gear-btn:hover {
+    border: 1px solid #32394B !important;
+    box-shadow: 0px 3px 7px rgb(22 23 24 / 20%);
+}
+textarea {
+    width: 428px;
+    min-height: 52px;
+    resize: vertical;
+    padding: 20px 24px;
+    border-radius: 10px;
+
+    border: 1px solid #F2F2F2;
+    background: #F2F2F2;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    
+    color: #666666;
+}
+textarea::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+
+    color: #666666;
+}
+.form_btn {
+    width:  94px;
+    height: 42px;
+    margin-left: 16px;
+    transition: .3s;
+}
+.form_btn:hover {
+    box-shadow: 0px 3px 7px rgb(22 23 24 / 20%);
+    border-radius: 9px;
+}
+.orange-btn {
+    width: 100%;
+    height: 100%;
+    border-radius: 9px;
+
+    background: #F1563C;
+    border: 1px solid #F1563C;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    cursor: pointer;
+
+    color: #fff;
+}
+.general-btn {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  border: 1px solid #F1563C !important;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 18px;
+  line-height: 26px;
+  cursor: pointer;
+  color: #F1563C;
+}
+.general-btn:hover {
+  box-shadow: 0px 3px 7px rgb(22 23 24 / 20%);
+  border-radius: 9px;
+}
+
+.mconfigs-content {
+    min-height: calc(100vh - 155px);
+    max-height: calc(100vh - 155px);
+    overflow: auto;
+    position: relative;
+
+    padding-right: 20px;
+    margin: 20px 0 0 0;
+}
+.mconfig-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    position: relative;
+}
+.mconfig-row label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+
+    color: #666666;
+}
+.mconfig-row input,
+.mconfig-row select {
+    border: none;
+    padding: 8px 0px 4px 8px;
+
+    border-bottom: 1px solid #E2E2E2;
+    background: #FFF;
+}
+input[type="text"] {
+    transition: .3s;
+}
+input[type="text"]:focus {
+    padding: 8px 0 10px 8px;
+}
+.mconfig-row input[type="text"],
+.mconfig-row select {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #333333;
+}
+.mconfig-row input:focus,
+.mconfig-row select {
+    outline: none;
+    border: none;
+
+    border-bottom: 1px solid #E2E2E2;
+}
+.mconfig-row select {
+    padding: 8px 0px 4px 2px;
+}
+
+.mconfig-row span.left,
+.mconfig-row span.right {
+    position: absolute;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    color: #A7A7A7;
+}
+.mconfig-row span.left {
+    top: 22px;
+    left: 0px;
+}
+.mconfig-row span.right {
+    top: 22px;
+    right: 0px;
+}
+.mconfig-row textarea {
+  width: auto;
+  padding: 8px 8px 4px 8px;
+  margin-top: 5px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  min-height: 150px;
+
+  color: #333333;
+  background: #FFF;
+  border: 1px solid #CECECE;
+}
+.mconfig-row textarea::placeholder {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+
+/* Dropdown with select ================ */
+.dropdown-select input {
+    width: calc(100% - 8px);
+}
+.arrow-close {
+    position: absolute;
+    top: 26px;
+    right: 14px;
+    cursor: pointer;
+    z-index: 99;
+}
+.arrow-open {
+    position: absolute;
+    top: 24px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 100;
+    display: none;
+}
+
+.dropdown-select input:hover {
+    cursor: pointer;
+}
+.dropdown-body {
+    display: none;
+    flex-direction: column;
+
+    width: 342px;
+    padding-bottom: 16px;
+    border-radius: 16px;
+
+    background: #FFFFFF;
+    border: 1px solid #D9DAE0;
+    box-shadow: 0px 10px 24px rgb(22 23 24 / 20%);
+}
+.dropdown-body h5 {
+    display: flex;
+    flex-direction: column;
+    margin: 16px 0 10px 0;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 150%;
+    padding-left: 16px;
+
+    color: #32394B;
+}
+.dropdown-body input[type='radio'] {
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    accent-color: red;
+}
+.dropdown-body .item-dr {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px 0 10px 16px;
+}
+.dropdown-body .item-dr input {
+    margin-right: 8px;
+}
+
+.dropdown-body .item-dr label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    color: #32394B;
+    cursor: pointer;
+}
+
+.show-dr {
+    display: flex;
+    position: absolute;
+    z-index: 99;
+    top: 34px;
+    right: -9px;
+}
+
+
+    /* chat styles ================================*/
+.chat-content .scroll-content {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: 16px;
+}
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    min-height: calc(100vh - 302px);
+    max-height: calc(100vh - 302px);
+    overflow: auto;
+    position: relative;
+    padding-right: 20px;
+    margin: 20px 0 0 0;
+}
+.chat-wrapper {
+    width: 104%;
+    margin-bottom: 32px;
+}
+#chatSection {
+    width: 640px;
+}
+#wrapper_Form {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0 0 0;
+    border-top: 1px solid #CBCBCB;
+}
+.chat-message {
+    max-width: 480px;
+    border-radius: 16px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+
+    padding: 16px 24px 16px 24px;
+    margin-top: 32px;
+
+    display: flex;
+  }
+  .chat-message p {
+    margin: 0;
+  }
+  .chat-message p img {
+    height: 280px;
+  }
+  .left-chat-message {
+    background: #F2F2F2;
+    color: #666666;
+    align-self: start;
+  }
+  .right-chat-message {
+    background: #7D7D7D;
+    color: #FFFFFF;
+    align-self: end;
+  }
+
+
+/* Range styles ================ */
+input[type="number"] {
+    position: absolute;
+    width: 24px;
+    padding: 4px 5px;
+    border-radius: 3px;
+    border: none;
+    text-align: center;
+    top: 13px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #333333;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type=number] {
+    -moz-appearance: textfield;
+  }
+
+input[type="range"] {
+    -webkit-appearance: none;
+    margin: 30px 0px;
+    height: 4px;
+    background: #E2E2E2;
+    border-radius: 4px;
+    background-image: linear-gradient(#FDC0B6, #FDC0B6);
+    background-size: 70% 100%;
+    background-repeat: no-repeat;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Input Thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    margin: 0px;
+    width: 32px;
+    height: 12px;
+
+    border: 1px solid #F1563C;
+    border-radius: 20px;
+    background: url(../img/Union.svg) no-repeat #FFFFFF;
+    background-position: 49.5% 50%;
+
+    cursor: pointer;
+  }
+  input[type="range"]::-moz-range-thumb {
+    margin: 0px;
+    width: 32px;
+    height: 12px;
+
+    border: 1px solid #F1563C;
+    border-radius: 20px;
+    background: url(../img/Union.svg) no-repeat #FFFFFF;
+    background-position: 49.5% 50%;
+
+    cursor: pointer;
+  }
+
+/* Input Track */
+input[type=range]::-webkit-slider-runnable-track  {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+  input[type=range]::-moz-range-track  {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+  }
+
+
+
+/* Scrollbar styles ============*/
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-moz-scrollbar  {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #F0F0F0;
+    border-radius: 8px;
+  }
+  ::-moz-scrollbar-track {
+    background: #F0F0F0;
+    border-radius: 8px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #CECECE;
+    border-radius: 8px;
+  }
+  ::-moz-range-thumb {
+    background: #CECECE;
+    border-radius: 8px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8e8ea0; 
+  }
+  ::-moz-scrollbar-thumb:hover {
+    background: #8e8ea0; 
+  }
+
+
+/* Shadow scroll =================== */
+.shadow {
+    position: absolute;
+    z-index: 100;
+    width: calc(100% - 24px);
+    height: 25px;
+    background: red;
+  }
+  .shadow--top {
+    top: 0;
+    background: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0.1), transparent);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1), transparent);
+    opacity: 0;
+    background-attachment: local, local, scroll, scroll;
+  }
+  .scroll-wrapper {
+    position: relative;
+  }
+  .shadow--bottom {
+    bottom: 0;
+    background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0.1), transparent);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), transparent);
+    background-attachment: local, local, scroll, scroll;
+  }
+  .chat-wrapper .shadow--bottom {
+    display: none;
+  }
+  .inside-scroll {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+
+.card {
+  width: 235px;
+  background: white;
+  border-radius: 5px;
+  padding: 25px;
+  border: 1px solid #8e8ea0;
+}
+.card div img {
+  width: 100%;
+}
+.card .ptitle {
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+}
+.card .pprice {
+  text-align: center;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 12px;
+  color: #F1563C;
+}
+.card .pprice span {
+  font-size: 10px;
+  line-height: 26px;
+  color: #8e8ea0;
+}
+.card .card-btn {
+  margin-top: 15px;
+  text-align: center;
+  padding: 10px;
+}
+.card .card-btn a {
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  background: #F1563C;
+  border: 1px solid #F1563C;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 26px;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 30px;
+  text-decoration: none;
+}
+.card .card-btn a:hover {
+  box-shadow: 0px 3px 7px rgb(22 23 24 / 20%);
+}
+.shoppingcart-card .pimg {
+  text-align: center;
+}
+.shoppingcart-card .pimg img {
+  width: 50%;
+  height: auto;
+  min-height: 200px;
+}
