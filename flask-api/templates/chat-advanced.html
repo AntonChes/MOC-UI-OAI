@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include 'parts/header.html' %}
+
+<body>
+  <div class="black-wrp"></div>
+  <div id="wrapper">
+    
+    {% include 'parts/advanced/adv-completion-model-config.html' %}
+
+    {% include 'parts/advanced/adv-completion-form.html' %}
+    
+  </div>
+
+
+  <footer>
+    {% include 'parts/footer.html' %}
+    <script src="{{ url_for('static', filename='adv-socketio.js') }}"></script>
+  </footer>
+
+</body>
+</html>

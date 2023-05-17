@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+      
+      <hr/>
+      
+      <table>
+         <thead>
+            <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>callback_url</th>
+               <th>Created at</th>
+            </tr>
+         </thead>
+         
+         <tbody>
+            {% for thirdbot in third_bots %}
+               <tr>
+                  <td>{{ thirdbot.id }}</td>
+                  <td>{{ thirdbot.bot_name }}</td>
+                  <td>{{ thirdbot.callback_url }}</td>
+                  <td>{{ thirdbot.created_at }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+      
+   </body>
+</html>
