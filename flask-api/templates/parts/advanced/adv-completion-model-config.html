@@ -1,0 +1,158 @@
+<aside id="modelConfigSection">
+
+    <div class="head">
+        <h3>Model Configuration</h3>
+    </div>
+
+    <div class="mconfigs-list">
+        
+        <div class="scroll-wrapper">
+            <div class="shadow shadow--top"></div>
+            <div class="shadow shadow--bottom"></div>
+
+            <div class="mconfigs-content scroll-content">
+
+                <!-- <div class="mconfig-row">
+                    <label for="PreHeaderName">Pre-header</label>
+                    <input type="text" id="PreHeaderName" placeholder="Starting prompt file name" value="L1">
+                </div> -->
+                <div class="mconfig-row">
+                    <label for="PreHeader">Pre-header</label>
+                    <textarea required type="text" id="PreHeader" placeholder="Add you instruction" value="">You are a helpful assistant</textarea>
+                </div>
+
+                <div class="mconfig-row">
+                    <label for="modelName">Model</label>
+                    <div class="dropdown-select">
+                    
+                        <input disabled type="text" id="modelName" value="gpt-3.5-turbo-0301" data-val="gpt-3.5-turbo-0301">
+
+                        <svg class="arrow-close" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.80584 7.90334C6.40623 8.44715 5.59376 8.44716 5.19416 7.90334L1.10774 2.34214C0.622459 1.68172 1.09404 0.75 1.91358 0.75L10.0864 0.750001C10.906 0.750001 11.3775 1.68172 10.8923 2.34214L6.80584 7.90334Z" fill="#666666"/>
+                        </svg>  
+                        <svg class="arrow-open" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="path-1-outside-1_39_1234" maskUnits="userSpaceOnUse" x="0.100505" y="0.585786" width="19.799" height="19.799" fill="black">
+                            <rect fill="white" x="0.100505" y="0.585786" width="19.799" height="19.799"/>
+                            <path d="M10 2L19 11L10 20L1 11L10 2Z"/>
+                            </mask>
+                            <path d="M10 2L19 11L10 20L1 11L10 2Z" fill="white"/>
+                            <path d="M10 2L10.7071 1.29289L10 0.585786L9.29289 1.29289L10 2ZM9.29289 2.70711L18.2929 11.7071L19.7071 10.2929L10.7071 1.29289L9.29289 2.70711ZM1.70711 11.7071L10.7071 2.70711L9.29289 1.29289L0.292894 10.2929L1.70711 11.7071Z" fill="#D9DAE0" mask="url(#path-1-outside-1_39_1234)"/>
+                        </svg>
+                    </div>
+
+                    <div class="dropdown-body">
+                        <div>
+                            <h5>Model</h5>
+                            <div class="romb"></div>
+                        </div>
+                        <div class="item-dr">
+                            <input checked type="radio" id="gpt-3.5-turbo-0301" name="model" value="gpt-3.5-turbo-0301">
+                            <label for="gpt-3.5-turbo-0301">gpt-3.5-turbo-0301</label>
+                        </div>
+                        <div class="item-dr">
+                            <input type="radio" id="gpt-3.5-turbo" name="model" value="gpt-3.5-turbo">
+                            <label for="gpt-3.5-turbo">gpt-3.5-turbo</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="mconfig-row">
+                    <label for="suffix">Suffix</label>
+                    <input type="text" id="suffix" placeholder="" value="">
+                </div> -->
+
+                <div class="mconfig-row">
+                    <label for="maxTokens">Max Tokens</label>
+                    <input type="text" id="maxTokens" placeholder="" value="256">
+                </div>
+
+                <div class="mconfig-row">
+                    <label for="Temperature">Temperature</label>
+                    <span class="left">0</span>
+                    <span class="right">1.0</span>
+                    <input type="range" step="0.1" min="0" max="1" value="0.7" class="slider" id="Temperature" oninput="TemperatureRange.value=value"/>
+                    <input disabled type="number" id="TemperatureRange" step="0.1" min="0" max="1" value="0.7" style="left: 240.404px;" oninput="range.value=value">
+                </div>
+
+                <div class="mconfig-row">
+                    <label for="topP">Top-P</label>
+                    <span class="left">0</span>
+                    <span class="right">1.0</span>
+                    <input type="range" step="0.1" min="0" max="1" value="1" class="slider" id="topP" style="background-size: 100% 100%;" oninput="toppRange.value=value"/>
+                    <input disabled type="number" id="toppRange" step="0.1" min="0" max="1" value="1" style="left: 343.434px;" oninput="range.value=value">
+                </div>
+
+                <!-- <div class="mconfig-row">
+                    <label for="nCompletions">N Completions</label>
+                    <input type="text" id="nCompletions" placeholder="" value="">
+                </div> -->
+
+                <!-- <div class="mconfig-row">
+                    <label for="stream">Stream</label>
+                    <div class="dropdown-select">
+                        <input disabled type="text" id="stream" value="No" data-val="False">
+
+                        <svg class="arrow-close" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.80584 7.90334C6.40623 8.44715 5.59376 8.44716 5.19416 7.90334L1.10774 2.34214C0.622459 1.68172 1.09404 0.75 1.91358 0.75L10.0864 0.750001C10.906 0.750001 11.3775 1.68172 10.8923 2.34214L6.80584 7.90334Z" fill="#666666"/>
+                        </svg>  
+                        <svg class="arrow-open" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <mask id="path-1-outside-1_39_1233" maskUnits="userSpaceOnUse" x="0.100505" y="0.585786" width="19.799" height="19.799" fill="black">
+                            <rect fill="white" x="0.100505" y="0.585786" width="19.799" height="19.799"/>
+                            <path d="M10 2L19 11L10 20L1 11L10 2Z"/>
+                            </mask>
+                            <path d="M10 2L19 11L10 20L1 11L10 2Z" fill="white"/>
+                            <path d="M10 2L10.7071 1.29289L10 0.585786L9.29289 1.29289L10 2ZM9.29289 2.70711L18.2929 11.7071L19.7071 10.2929L10.7071 1.29289L9.29289 2.70711ZM1.70711 11.7071L10.7071 2.70711L9.29289 1.29289L0.292894 10.2929L1.70711 11.7071Z" fill="#D9DAE0" mask="url(#path-1-outside-1_39_1233)"/>
+                        </svg>
+                    </div>
+                    <div class="dropdown-body">
+                        <div clas="head-dr">
+                            <h5>Stream</h5>
+                            <div class="romb"></div>
+                        </div>
+                        <div class="item-dr">
+                            <input type="radio" id="Yes" name="stream" value="True">
+                            <label for="Yes">Yes</label>
+                        </div>
+                        <div class="item-dr">
+                            <input checked type="radio" id="No" name="stream" value="False">
+                            <label for="No">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mconfig-row">
+                    <label for="logprobs">Logprobs</label>
+                    <input type="text" id="logprobs" placeholder="" value="">
+                </div>
+
+                <div class="mconfig-row">
+                    <label for="stop">Stop</label>
+                    <input type="text" id="stop" placeholder="" value="Customer, LogiboT, END">
+                </div> -->
+
+                <div class="mconfig-row">
+                    <label for="presencePenalty">Presence Penalty</label>
+                    <span class="left">-2</span>
+                    <span class="right">2.0</span>
+                    <input type="range" step="0.1" min="-2" max="2.0" value="0" class="slider" id="presencePenalty" style="background-size: 50% 100%;" oninput="presencePenaltyRange.value=value"/>
+                    <input disabled type="number" id="presencePenaltyRange" step="0.1" min="-2" max="2.0" value="0" style="left: 172.589px;" oninput="range.value=value">
+                </div>
+
+                <div class="mconfig-row">
+                    <label for="frequencyPenalty">Frequency Penalty</label>
+                    <span class="left">-2</span>
+                    <span class="right">2.0</span>
+                    <input type="range" step="0.1" min="-2" max="2.0" value="0" class="slider" id="frequencyPenalty" style="background-size: 50% 100%;" oninput="frequencyPenaltyRange.value=value"/>
+                    <input disabled type="number" id="frequencyPenaltyRange" step="0.1" min="-2" max="2.0" value="0" style="left: 172.589px;" oninput="range.value=value">
+                </div>
+
+                <div class="mconfig-row">
+                    <form id="CleanChatHistoryForm" action="" method="post">
+                        <input class="general-btn" type="submit" value="Delete chat history" />    
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</aside>
