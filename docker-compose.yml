@@ -1,0 +1,29 @@
+version: '3.3'
+
+services:
+
+  flask:
+    build: ./flask-api
+    image: flask-openai-api
+    command: python main.py
+    volumes:
+      - ./flask-api/:/usr/src/app/
+    ports:
+      - 5000:5000
+    env_file:
+      - ./flask-api/.env
+
+  # Celery service
+  celery-worker:
+    build: ./flask-api
+    command: celery --app api.celery_worker.tasks.celery_app worker --loglevel=info --logfile=logs/celery-worker.log
+    volumes:
+      - ./flask-api/:/usr/src/app/
+    env_file:
+      - ./flask-api/.env
+    depends_on:
+      - flask
+      - redis
+
+  redis:
+    image: redis:6-alpine
